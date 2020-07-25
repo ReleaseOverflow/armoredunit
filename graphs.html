@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<!--
+-->
+<html>
+	<head>
+		<title>Graphs</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="is-preload">
+
+			<header id="header">
+				<a class="logo" href="index.html">Home</a>
+				<nav>
+					<a href="#menu">Menu</a>
+				</nav>
+			</header>
+
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="index.html">Home</a></li>
+					<!-- <li><a href="elements.html">Elements</a></li> -->
+					<li><a href="graphs.html">System Tools</a></li>
+				</ul>
+			</nav>
+
+			<div id="heading" >
+				<h1>Graphs</h1>
+			</div>
+
+			<section id="main" class="wrapper">
+				<div class="inner">
+					<div class="content">
+						<header>
+							<h2>_anamolous_Tickrate_Noise</h2>
+						</header>
+						<p>Tickrate Stability Focus</p>
+						<p>Documenting Tickrate 'noise*'  issues with the stability of some Source Engine (2004-2015) titles. </p>
+						<hr />
+						<h3>Magna odio tempus commodo</h3>
+						<p>documentation_tool - Draw graphs to represent two tickrates, A vs B.</p>
+						<p><pre><script>
+    function draw() {
+        /* Accepting and seperating comma seperated values */
+        var n = document.getElementById("num").value;
+        var values = n.split(',');
+         
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
+ 
+        var width = 40; //bar width
+        var X = 50; // first bar position 
+        var base = 200;
+         
+        for (var i =0; i<values.length; i++) {
+            ctx.fillStyle = '#008080'; 
+            var h = values[i];
+            ctx.fillRect(X,canvas.height - h,width,h);
+             
+            X +=  width+15;
+            /* text to display Bar number */
+            ctx.fillStyle = '#4da6ff';
+            ctx.fillText('Bar '+i,X-50,canvas.height - h -10);
+        }
+            /* Text to display scale */
+            ctx.fillStyle = '#000000';
+            ctx.fillText('Scale X : '
++canvas.width+' Y : '+canvas.height,800,10);
+   
+    }
+    function reset(){
+         var canvas = document.getElementById('myCanvas');
+          var ctx = canvas.getContext('2d');
+           ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+</script>
+  
+ 
+    Enter the values seperated by a comma<br> 
+    <input type="text" name="number" id="num"><br>
+    <input type="button" value="submit" name="submit" onclick="draw()">
+    <input type="button" value="Clear" name="Clear" onclick="reset()">
+     
+ 
+<canvas id="myCanvas" width="900" height="500
+ style=" border:1px="" solid="" #c3c3c3;"="">
+    </canvas>
+ 
+ 
+</pre>
+					</div>
+				</div>
+			</section>
+
+			<footer id="footer">
+				<div class="inner">
+					<div class="content">
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
